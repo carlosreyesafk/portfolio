@@ -1,37 +1,21 @@
-// 🧠 EL CEREBRO — Todo el contenido del portafolio vive aquí.
-// Actualiza este archivo y todo el sitio se actualiza solo.
+// EL CEREBRO — Portafolio de Carlos Reyes, Software Developer.
+// Todo el contenido vive aquí. Sin emojis en títulos, sin humo, solo hechos.
 
 export interface AIProject {
   name: string;
+  slug: string;
   tagline: string;
   description: string;
+  highlight: string;
   stack: string[];
   demoUrl: string;
   repoUrl: string;
-  emoji: string;
 }
 
-export interface Product {
-  name: string;
-  tagline: string;
-  description: string;
-  url: string;
-  price?: string;
-  emoji: string;
-  badge?: string;
-}
-
-export interface GumroadProduct {
-  name: string;
-  price: string;
-  url: string;
-  tag: string;
-}
-
-export interface ClientConcept {
+export interface Concept {
   business: string;
-  type: string;
   industry: string;
+  type: string;
   description: string;
 }
 
@@ -50,211 +34,170 @@ export interface Tech {
 // ─── HERO ──────────────────────────────────────────────
 export const hero = {
   name: "Carlos Reyes",
-  role: "Software Developer · AI Builder",
+  role: "Software Developer",
   tagline:
-    "Construyo productos web con IA que salen a producción. Del prompt al deploy, sin excusas.",
+    "Construyo y despliego software que funciona. Del prompt al deploy, sin excusas.",
+  badge: "Disponible para trabajo remoto",
   ctas: [
-    { label: "Ver proyectos", href: "#proyectos-ia" },
-    { label: "Contrátame", href: "#contacto" },
+    { label: "Ver proyectos", href: "#proyectos" },
+    { label: "GitHub", href: "https://github.com/carlosreyesafk" },
   ],
   stats: [
-    { value: 25, suffix: "+", label: "Proyectos construidos" },
+    { value: 6, suffix: "", label: "Apps IA en producción" },
+    { value: 2, suffix: "", label: "Productos en vivo" },
     { value: 12, suffix: "", label: "Tecnologías dominadas" },
-    { value: 10, suffix: "", label: "Productos digitales" },
-    { value: 13, suffix: "", label: "Conceptos para clientes" },
+    { value: 100, suffix: "%", label: "Client-side, cero servidores" },
   ],
 };
 
 // ─── PROYECTOS IA (6) ──────────────────────────────────
-// TODO: llenar cuando estén listos los 6 proyectos IA.
-// Cada entrada: { name, tagline, description, stack, demoUrl, repoUrl, emoji }
 export const aiProjects: AIProject[] = [
   {
     name: "AI Landing Generator",
-    tagline: "Describe tu negocio → landing page completa en 10 segundos",
-    description: "Motor de generación con 10 industrias × 3 tonos. Hero, features, testimonios, pricing y CTA — todo coherente con tu negocio. Exporta HTML listo para publicar.",
+    slug: "ai-landing-generator",
+    tagline: "Describe tu negocio, recibe una landing completa en segundos",
+    description:
+      "Generador de landing pages con motor de plantillas por industria y tono. Hero, features, testimonios, pricing y CTA coherentes con el negocio. Exporta HTML listo para publicar.",
+    highlight: "10 industrias × 3 tonos · HTML exportable · sin IA en runtime",
     stack: ["Next.js", "TypeScript", "Tailwind"],
-    demoUrl: "https://ai-landing-generator-qnl2djir0-carlosreyesafks-projects.vercel.app",
+    demoUrl:
+      "https://ai-landing-generator-qnl2djir0-carlosreyesafks-projects.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/ai-landing-generator",
-    emoji: "🎯",
   },
   {
     name: "Smart Doc Chat",
-    tagline: "Sube PDFs → chatea con tus documentos",
-    description: "RAG 100% en tu navegador: pdf.js + chunking + búsqueda semántica TF-IDF. Respuestas con citas de página. Tus documentos nunca salen de tu dispositivo.",
-    stack: ["Next.js", "TypeScript", "pdf.js"],
-    demoUrl: "https://smart-doc-chat-6uxe4ybq0-carlosreyesafks-projects.vercel.app",
+    slug: "smart-doc-chat",
+    tagline: "Sube PDFs y conversa con tus documentos",
+    description:
+      "Chat con documentos usando PDF.js, chunking y búsqueda semántica TF-IDF. Respuestas extractivas con citas de página. Todo procesado en tu navegador.",
+    highlight: "RAG 100% local · citas por página · privacidad total",
+    stack: ["Next.js", "TypeScript", "PDF.js"],
+    demoUrl:
+      "https://smart-doc-chat-6uxe4ybq0-carlosreyesafks-projects.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/smart-doc-chat",
-    emoji: "💬",
   },
   {
     name: "Voice to Action",
-    tagline: "Graba 2 min de voz → resumen + tareas automáticas",
-    description: "Whisper corriendo en tu navegador transcribe tu voz, luego extrae resumen ejecutivo, tareas accionables y puntos clave. Sin servidores, sin cuentas.",
-    stack: ["Next.js", "TypeScript", "Transformers.js", "Whisper"],
+    slug: "voice-to-action",
+    tagline: "Graba tu voz, recibe resumen y tareas accionables",
+    description:
+      "Grabación con visualizador en tiempo real, transcripción con Whisper corriendo localmente y extracción automática de resumen, tareas y puntos clave.",
+    highlight: "Whisper vía Transformers.js · sin API keys · sin cuentas",
+    stack: ["Next.js", "TypeScript", "Transformers.js"],
     demoUrl: "https://voice-to-action-chachi.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/voice-to-action",
-    emoji: "🎙️",
   },
   {
     name: "Data Talk",
-    tagline: "Sube un CSV → pregúntale en español",
-    description: "Haz preguntas en lenguaje natural sobre tus datos y obtén respuestas con gráficos automáticos. Detección de tipos, sugerencias inteligentes, visualizaciones.",
+    slug: "data-talk",
+    tagline: "Sube un CSV y pregúntale en lenguaje natural",
+    description:
+      "Analiza datos tabulares con preguntas en español o inglés. Detección automática de tipos de columna, agregaciones y gráficos generados al vuelo.",
+    highlight: "NLU por patrones ES/EN · gráficos automáticos",
     stack: ["Next.js", "TypeScript", "Recharts"],
     demoUrl: "https://data-talk-chachi.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/data-talk",
-    emoji: "📊",
   },
   {
     name: "Code Sensei",
-    tagline: "Pega código → análisis de senior developer",
-    description: "Motor de análisis estático desde cero: 15+ patrones de bugs, complejidad ciclomática por función, score 0-100 con desglose. JS, TS y Python.",
+    slug: "code-sensei",
+    tagline: "Pega código y recibe análisis de nivel senior",
+    description:
+      "Motor de análisis estático construido desde cero. Detecta bugs comunes, calcula complejidad ciclomática por función y entrega score 0–100 con desglose.",
+    highlight: "15+ patrones de bugs · JS, TS y Python · análisis propio",
     stack: ["Next.js", "TypeScript", "Prism"],
-    demoUrl: "https://code-sensei-rlkhu3q52-carlosreyesafks-projects.vercel.app",
+    demoUrl:
+      "https://code-sensei-rlkhu3q52-carlosreyesafks-projects.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/code-sensei",
-    emoji: "🔍",
   },
   {
     name: "Site Auditor AI",
-    tagline: "Pega una URL → auditoría profesional instantánea",
-    description: "18 checks en 4 categorías (SEO, Accesibilidad, Performance, Buenas prácticas). Scores con gauges, recomendaciones priorizadas por impacto, historial comparativo.",
+    slug: "site-auditor-ai",
+    tagline: "Pega una URL y recibe una auditoría profesional",
+    description:
+      "18 verificaciones reales en 4 categorías: SEO, accesibilidad, performance y buenas prácticas. Scores por categoría y recomendaciones priorizadas.",
+    highlight: "18 checks reales · sin backend · resultados en segundos",
     stack: ["Next.js", "TypeScript", "Tailwind"],
-    demoUrl: "https://site-auditor-7r3a4uln6-carlosreyesafks-projects.vercel.app",
+    demoUrl:
+      "https://site-auditor-7r3a4uln6-carlosreyesafks-projects.vercel.app",
     repoUrl: "https://github.com/carlosreyesafk/site-auditor-ai",
-    emoji: "🌐",
   },
 ];
+
+// ─── CASO DE ESTUDIO: COBRAYA ──────────────────────────
+export const caseStudy = {
+  product: "CobraYa",
+  tagline: "SaaS de cobranza para pymes dominicanas",
+  url: "https://cobraya-xi.vercel.app",
+  status: "MVP v0.1.0 en vivo",
+  problem:
+    "Las pymes dominicanas pierden miles cada mes en facturas sin cobrar. Perseguir deudores por WhatsApp, a mano, no escala — y contratar un cobrador sale más caro que la deuda.",
+  build:
+    "Dashboard de deudores con antigüedad de saldos, CRUD completo de deudas, historial de pagos y recordatorio en 1 clic vía wa.me. Backend en Supabase con Row Level Security. Desplegado en Vercel.",
+  validation:
+    "Estrategia de validación: 5 pilotos gratis de 30 días con negocios reales. Meta: 2 convertidos a pago.",
+  stack: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+  pricing: "RD$1,495/mes · Pro RD$2,495/mes",
+};
 
 // ─── PRODUCTOS ─────────────────────────────────────────
-export const products: Product[] = [
+export const products = [
   {
-    name: "CobraYa",
-    tagline: "SaaS de cobranza para pymes",
+    name: "Vigía Web",
+    tagline: "Monitoreo de uptime y certificados SSL",
     description:
-      "Dashboard de deudores, recordatorios por WhatsApp en 1 clic, historial de pagos. Tus clientes te deben → tú cobras sin perseguir a nadie.",
-    url: "https://cobraya-xi.vercel.app",
-    price: "RD$1,495/mes",
-    emoji: "💰",
-    badge: "En vivo",
-  },
-  {
-    name: "Vigia Web",
-    tagline: "Monitoreo uptime + SSL",
-    description:
-      "Vigila tus webs 24/7: caídas, certificados SSL por vencer, alertas. Con cobro en crypto (USDT).",
+      "Vigila sitios 24/7: detecta caídas, anticipa vencimientos de SSL y envía alertas. Infraestructura propia corriendo en serverless.",
     url: "https://github.com/carlosreyesafk/vigia-web",
-    emoji: "📡",
-  },
-  {
-    name: "Bot Calificador",
-    tagline: "Pay-per-lead para clínicas",
-    description:
-      "Bot que califica pacientes antes de agendar. Las clínicas pagan por lead calificado, no por clics.",
-    url: "https://srv01-payperlead-chachi-8dka1hqgz-carlosreyesafks-projects.vercel.app",
-    emoji: "🤖",
-    badge: "Servicio",
-  },
-  {
-    name: "Moderación Crypto",
-    tagline: "Modera tu comunidad",
-    description:
-      "Servicio de moderación para comunidades crypto: anti-spam, reglas claras, ambiente sano.",
-    url: "https://srv02-moderacion-chachi-atapdvw64-carlosreyesafks-projects.vercel.app",
-    emoji: "🛡️",
-    badge: "Servicio",
-  },
-  {
-    name: "Transcripción IA",
-    tagline: "Audio → texto perfecto",
-    description:
-      "Transcripción de audio y video con IA: rápida, precisa, con capítulos y formato listo para publicar.",
-    url: "https://srv03-transcripcion-chachi-me4jr4woj-carlosreyesafks-projects.vercel.app",
-    emoji: "🎙️",
-    badge: "Servicio",
-  },
-  {
-    name: "Email Copy",
-    tagline: "Emails que venden",
-    description:
-      "Copywriting de emails con IA + revisión humana. Secuencias que abren, hacen clic y convierten.",
-    url: "https://srv04-emailcopy-chachi-9arzghdjy-carlosreyesafks-projects.vercel.app",
-    emoji: "✉️",
-    badge: "Servicio",
+    stack: ["Next.js", "TypeScript", "Vercel Cron"],
   },
 ];
 
-// ─── TIENDA DIGITAL (Gumroad) ──────────────────────────
-const G = "https://chachiafk.gumroad.com";
-export const gumroadProducts: GumroadProduct[] = [
-  { name: "70 Prompts IA para Agentes Inmobiliarios", price: "US$19", url: `${G}/l/dxbma`, tag: "Prompts IA" },
-  { name: "Calendario de Contenido 365", price: "US$19", url: `${G}/l/dvgsrh`, tag: "Marketing" },
-  { name: "Subtítulos + Capítulos + SEO", price: "US$49", url: `${G}/l/subtitulos-capitulos-seo`, tag: "Video" },
-  { name: "Pack 15 Emails para Clínicas Dentales", price: "US$39", url: `${G}/l/pack-emails-clinicas-dentales`, tag: "Copywriting" },
-  { name: "Kit QuéHaySD", price: "US$29", url: `${G}/l/njugpk`, tag: "Negocios RD" },
-  { name: "Secuencia de Lanzamiento para Infoproductores", price: "US$49", url: `${G}/l/secuencia-lanzamiento`, tag: "Copywriting" },
-  { name: "80 Prompts IA para Contadores", price: "US$19", url: `${G}/l/prompts-contador-rd`, tag: "Prompts IA" },
-  { name: "10 Lead Magnets listos para usar", price: "US$19", url: `${G}/l/fywdvi`, tag: "Marketing" },
-  { name: "Facturación Electrónica DGII", price: "Gratis", url: `${G}/l/zpjmgv`, tag: "Negocios RD" },
-  { name: "50 Prompts IA para Freelancers", price: "US$12", url: `${G}/l/kblfnd`, tag: "Prompts IA" },
-];
-export const gumroadStoreUrl = "https://chachiafk.gumroad.com";
-
-// ─── CONCEPTOS PARA CLIENTES ───────────────────────────
-export const clientConcepts: ClientConcept[] = [
-  { business: "Restaurante El Conuco", type: "Restaurante", industry: "Gastronomía", description: "Concepto de rediseño web: menú digital, reservaciones y ambiente dominicano." },
-  { business: "Guaro Pilates Studio", type: "Estudio de Pilates", industry: "Fitness", description: "Concepto de web: clases, horarios de Reformer y reserva en línea." },
-  { business: "Sarah Restaurante", type: "Restaurante", industry: "Gastronomía", description: "Landing premium: propuesta gastronómica de alto nivel en Santo Domingo." },
-  { business: "Bizcochos del Patio", type: "Repostería", industry: "Gastronomía", description: "Concepto de tienda: catálogo de bizcochos y pedidos para eventos." },
-  { business: "Barbería Nader", type: "Barbería", industry: "Belleza", description: "Concepto de web: servicios, galería de cortes y booking." },
-  { business: "Taller Erimaldi", type: "Mecánica y repuestos", industry: "Automotriz", description: "Concepto de web: servicios del taller y catálogo de repuestos." },
-  { business: "The Power Box", type: "Gimnasio", industry: "Fitness", description: "Concepto de rediseño: planes, entrenadores y energía de alto voltaje." },
-  { business: "Dra. María Nolasco", type: "Clínica dental", industry: "Salud", description: "Landing para clínica dental: servicios, confianza y citas en línea." },
-  { business: "Clínica Sonrisas", type: "Clínica dental", industry: "Salud", description: "Concepto de web odontológica: tratamientos y captación de pacientes." },
-  { business: "Manos Sanadoras Spa", type: "Spa", industry: "Bienestar", description: "Concepto de web: terapias, ambiente zen y reservas." },
-  { business: "Yeneys Studio", type: "Estudio de belleza", industry: "Belleza", description: "Landing de estudio: portafolio de trabajos y citas." },
-  { business: "D' Mirian Salón", type: "Salón de belleza", industry: "Belleza", description: "Concepto de web: servicios del salón y reserva de citas." },
-  { business: "Tres Jollie Beauty Center", type: "Centro de belleza", industry: "Belleza", description: "Concepto premium: centro integral de belleza y estética." },
+// ─── CONCEPTOS ─────────────────────────────────────────
+// Exploraciones de diseño no solicitadas. Ejercicio de velocidad y criterio,
+// no trabajo contratado.
+export const concepts: Concept[] = [
+  { business: "Restaurante El Conuco", industry: "Gastronomía", type: "Restaurante", description: "Menú digital, reservaciones y ambiente dominicano." },
+  { business: "Guaro Pilates Studio", industry: "Fitness", type: "Estudio de Pilates", description: "Clases, horarios de Reformer y reserva en línea." },
+  { business: "Sarah Restaurante", industry: "Gastronomía", type: "Restaurante", description: "Landing premium para propuesta gastronómica de alto nivel." },
+  { business: "Bizcochos del Patio", industry: "Gastronomía", type: "Repostería", description: "Catálogo de bizcochos y pedidos para eventos." },
+  { business: "Barbería Nader", industry: "Belleza", type: "Barbería", description: "Servicios, galería de cortes y booking." },
+  { business: "Taller Erimaldi", industry: "Automotriz", type: "Mecánica y repuestos", description: "Servicios del taller y catálogo de repuestos." },
+  { business: "The Power Box", industry: "Fitness", type: "Gimnasio", description: "Planes, entrenadores y rediseño de alto voltaje." },
+  { business: "Dra. María Nolasco", industry: "Salud", type: "Clínica dental", description: "Servicios, confianza y citas en línea." },
+  { business: "Clínica Sonrisas", industry: "Salud", type: "Clínica dental", description: "Tratamientos odontológicos y captación de pacientes." },
+  { business: "Manos Sanadoras Spa", industry: "Bienestar", type: "Spa", description: "Terapias, ambiente zen y reservas." },
+  { business: "Yeneys Studio", industry: "Belleza", type: "Estudio de belleza", description: "Portafolio de trabajos y citas." },
+  { business: "D' Mirian Salón", industry: "Belleza", type: "Salón de belleza", description: "Servicios del salón y reserva de citas." },
+  { business: "Tres Jollie Beauty Center", industry: "Belleza", type: "Centro de belleza", description: "Centro integral de belleza y estética." },
 ];
 
 // ─── TIMELINE ──────────────────────────────────────────
 export const timeline: TimelineEvent[] = [
   {
     date: "2024",
-    title: "Dev real, clientes reales",
+    title: "Código en producción",
     description:
-      "Años construyendo plataformas en producción: portales, sistemas con Docker, marketplaces. El código que nadie ve pero todo el mundo usa.",
+      "Construyendo plataformas y sistemas en producción: portales web, infraestructura con Docker, marketplaces completos.",
   },
   {
     date: "Jul 2026",
-    title: "Ingeniero en Sistemas 🎓",
+    title: "Ingeniero en Sistemas y Computación",
     description:
-      "Graduado en Ingeniería en Sistemas y Computación, Universidad Dominicana O&M. El título que respalda lo que ya sabía hacer.",
+      "Graduado, Universidad Dominicana O&M. El título que respalda lo que ya sabía hacer.",
     highlight: true,
   },
   {
     date: "Oct 2026",
-    title: "CobraYa MVP 🚀",
+    title: "CobraYa — MVP en vivo",
     description:
-      "Lanzo mi primer SaaS: cobranza automatizada para pymes dominicanas. De idea a producción en días.",
+      "Mi primer SaaS: cobranza automatizada para pymes dominicanas. De idea a producción en días.",
     highlight: true,
   },
   {
     date: "Oct 2026",
-    title: "Operación Sitios",
+    title: "6 aplicaciones IA",
     description:
-      "Outbound con demos personalizadas: webs concepto para negocios reales de Santo Domingo. Volumen, velocidad, iteración.",
-  },
-  {
-    date: "Oct 2026",
-    title: "Productos digitales",
-    description:
-      "10 productos en Gumroad: prompts IA, copywriting, marketing. Del conocimiento al ingreso.",
-  },
-  {
-    date: "Oct 2026",
-    title: "Proyectos IA 🤖",
-    description:
-      "6 aplicaciones con inteligencia artificial corriendo en el navegador. El siguiente nivel.",
+      "Diseñadas, construidas y desplegadas. Todas con demo en vivo y código abierto.",
     highlight: true,
   },
 ];
@@ -275,11 +218,18 @@ export const stack: Tech[] = [
   { name: "Python", category: "Lenguaje" },
 ];
 
+// ─── TIENDA (mínima) ───────────────────────────────────
+export const store = {
+  note: "También empaqueto conocimiento en productos digitales.",
+  label: "Ver tienda en Gumroad",
+  url: "https://chachiafk.gumroad.com",
+};
+
 // ─── CONTACTO ──────────────────────────────────────────
 export const contact = {
-  headline: "¿Construimos algo?",
+  headline: "Hablemos.",
   description:
-    "Disponible para trabajo remoto part-time (~4h/día). Web apps, SaaS, integraciones IA, landing pages que convierten.",
+    "Trabajo remoto, ~4h/día. Construyo web apps, SaaS e integraciones IA — y las pongo en producción. Sin humo, solo lo que domino.",
   email: "carlosreyesafk@gmail.com",
   links: [
     { label: "Upwork", url: "https://www.upwork.com/freelancers/~015fcb17ba7d725843" },
@@ -289,10 +239,10 @@ export const contact = {
 };
 
 export const nav = [
-  { label: "Proyectos IA", href: "#proyectos-ia" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Caso de estudio", href: "#caso" },
   { label: "Productos", href: "#productos" },
-  { label: "Tienda", href: "#tienda" },
-  { label: "Clientes", href: "#clientes" },
+  { label: "Conceptos", href: "#conceptos" },
   { label: "Historia", href: "#historia" },
   { label: "Stack", href: "#stack" },
   { label: "Contacto", href: "#contacto" },
