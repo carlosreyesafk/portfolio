@@ -69,12 +69,60 @@ export const hero = {
 // TODO: llenar cuando estén listos los 6 proyectos IA.
 // Cada entrada: { name, tagline, description, stack, demoUrl, repoUrl, emoji }
 export const aiProjects: AIProject[] = [
-  // TODO: ai-landing-generator — describe tu negocio → landing page completa
-  // TODO: smart-doc-chat — sube PDFs → chatea con tus documentos
-  // TODO: voice-to-action — graba voz → transcripción + resumen + tareas
-  // TODO: data-talk — sube un CSV → pregúntale en lenguaje natural
-  // TODO: code-sensei — pega código → análisis de senior developer
-  // TODO: site-auditor-ai — pega una URL → auditoría pro instantánea
+  {
+    name: "AI Landing Generator",
+    tagline: "Describe tu negocio → landing page completa en 10 segundos",
+    description: "Motor de generación con 10 industrias × 3 tonos. Hero, features, testimonios, pricing y CTA — todo coherente con tu negocio. Exporta HTML listo para publicar.",
+    stack: ["Next.js", "TypeScript", "Tailwind"],
+    demoUrl: "https://ai-landing-generator-qnl2djir0-carlosreyesafks-projects.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/ai-landing-generator",
+    emoji: "🎯",
+  },
+  {
+    name: "Smart Doc Chat",
+    tagline: "Sube PDFs → chatea con tus documentos",
+    description: "RAG 100% en tu navegador: pdf.js + chunking + búsqueda semántica TF-IDF. Respuestas con citas de página. Tus documentos nunca salen de tu dispositivo.",
+    stack: ["Next.js", "TypeScript", "pdf.js"],
+    demoUrl: "https://smart-doc-chat-6uxe4ybq0-carlosreyesafks-projects.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/smart-doc-chat",
+    emoji: "💬",
+  },
+  {
+    name: "Voice to Action",
+    tagline: "Graba 2 min de voz → resumen + tareas automáticas",
+    description: "Whisper corriendo en tu navegador transcribe tu voz, luego extrae resumen ejecutivo, tareas accionables y puntos clave. Sin servidores, sin cuentas.",
+    stack: ["Next.js", "TypeScript", "Transformers.js", "Whisper"],
+    demoUrl: "https://voice-to-action-chachi.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/voice-to-action",
+    emoji: "🎙️",
+  },
+  {
+    name: "Data Talk",
+    tagline: "Sube un CSV → pregúntale en español",
+    description: "Haz preguntas en lenguaje natural sobre tus datos y obtén respuestas con gráficos automáticos. Detección de tipos, sugerencias inteligentes, visualizaciones.",
+    stack: ["Next.js", "TypeScript", "Recharts"],
+    demoUrl: "https://data-talk-chachi.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/data-talk",
+    emoji: "📊",
+  },
+  {
+    name: "Code Sensei",
+    tagline: "Pega código → análisis de senior developer",
+    description: "Motor de análisis estático desde cero: 15+ patrones de bugs, complejidad ciclomática por función, score 0-100 con desglose. JS, TS y Python.",
+    stack: ["Next.js", "TypeScript", "Prism"],
+    demoUrl: "https://code-sensei-rlkhu3q52-carlosreyesafks-projects.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/code-sensei",
+    emoji: "🔍",
+  },
+  {
+    name: "Site Auditor AI",
+    tagline: "Pega una URL → auditoría profesional instantánea",
+    description: "18 checks en 4 categorías (SEO, Accesibilidad, Performance, Buenas prácticas). Scores con gauges, recomendaciones priorizadas por impacto, historial comparativo.",
+    stack: ["Next.js", "TypeScript", "Tailwind"],
+    demoUrl: "https://site-auditor-7r3a4uln6-carlosreyesafks-projects.vercel.app",
+    repoUrl: "https://github.com/carlosreyesafk/site-auditor-ai",
+    emoji: "🌐",
+  },
 ];
 
 // ─── PRODUCTOS ─────────────────────────────────────────
