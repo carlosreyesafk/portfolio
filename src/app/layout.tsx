@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Carlos Reyes — Software Developer · AI Builder",
+  title: "Carlos Reyes — Software Developer",
   description:
-    "El cerebro de Carlos Reyes: proyectos IA, SaaS, productos digitales y conceptos web. Del prompt al deploy.",
+    "Carlos Reyes, Software Developer. 6 aplicaciones IA en producción, SaaS en vivo, código abierto. Sin humo, solo lo que domino.",
 };
 
 export default function RootLayout({
